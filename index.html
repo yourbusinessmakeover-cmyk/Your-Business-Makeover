@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>YBM — Does Your Business Look As Great As It Is? | Free Audit</title>
+<meta name="description" content="Your business might be great. But does it look great online? We make your Google profile, Instagram, website, branding or Airbnb listing look professional. Get a free audit.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YBM — Your Business Might Be Great. But Does It Look Great Online?">
+<meta property="og:description" content="We make your Google profile, Instagram, website, branding or Airbnb listing look professional — so customers feel confident choosing you. Get a free audit.">
+<meta property="og:image" content="images/hero-livorno.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D1B2A">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+body { overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { font: inherit; cursor: pointer; background: none; border: none; color: inherit; }
+ul { list-style: none; }
+h1, h2, h3, h4 { font-weight: inherit; line-height: 1.22; }
+:focus-visible { outline: 2px solid #C8A25B; outline-offset: 3px; }
+
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  --navy: #0D1B2A;
+  --navy-2: #16283D;
+  --navy-3: #0A1420;
+  --gold: #C8A25B;
+  --gold-light: #E4C989;
+  --gold-text: #93732E;
+  --cream: #F5EFE6;
+  --cream-2: #FBF8F3;
+  --gray: #6B7280;
+  --gray-light: #EAEAEA;
+  --white: #FFFFFF;
+  --text-body: #4A5464;
+  --text-body-on-navy: #C4CCD6;
+
+  --font-display: 'Anton', 'Arial Narrow', Impact, sans-serif;
+  --font-body: 'Montserrat', -apple-system, sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --container: 1160px;
+  --shadow-card: 0 10px 30px -12px rgba(13, 27, 42, 0.18);
+  --shadow-card-hover: 0 18px 40px -14px rgba(13, 27, 42, 0.28);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+body {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background: var(--cream);
+  font-size: 16px;
+  line-height: 1.6;
+}
+h1, h2, h3 { font-family: var(--font-display); color: var(--navy); }
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-bottom: var(--space-sm);
+}
+.eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 1.5px;
+  background: var(--gold);
+  display: inline-block;
+}
+.eyebrow--on-navy { color: var(--gold-light); }
+
+h1 { font-size: clamp(1.9rem, 5vw, 3.3rem); letter-spacing: 0.005em; text-transform: uppercase; }
+h2 { font-size: clamp(1.6rem, 3.8vw, 2.35rem); letter-spacing: 0.005em; text-transform: uppercase; }
+h3 { font-size: clamp(1.15rem, 2.4vw, 1.4rem); letter-spacing: 0.01em; text-transform: uppercase; }
+.accent { color: var(--gold-text); }
+.accent--on-navy { color: var(--gold); }
+p.lede { font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--text-body); max-width: 42em; }
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+.wrap { max-width: var(--container); margin: 0 auto; padding: 0 1.25rem; }
+section { padding: var(--space-2xl) 0; }
+.section-head { max-width: 640px; margin-bottom: var(--space-lg); }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.9rem;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--navy);
+  box-shadow: 0 10px 24px -8px rgba(200, 162, 91, 0.55);
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 14px 30px -8px rgba(200, 162, 91, 0.65); }
+.btn-outline {
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+}
+.btn-outline:hover { background: var(--navy); color: var(--cream); }
+.btn-outline--on-navy { border-color: rgba(255,255,255,0.4); color: var(--white); }
+.btn-outline--on-navy:hover { background: var(--white); color: var(--navy); }
+.btn-sm { padding: 0.7rem 1.3rem; font-size: 0.82rem; }
+
+/* ============================================
+   NAV
+   ============================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245, 239, 230, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.nav.is-scrolled { border-color: rgba(13,27,42,0.08); box-shadow: 0 4px 20px -8px rgba(13,27,42,0.12); }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.25rem; max-width: var(--container); margin: 0 auto; }
+.nav__brand { display: flex; align-items: center; gap: 0.65rem; }
+.nav__brand img { width: 42px; height: 42px; border-radius: 50%; }
+.nav__brand-text { font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; color: var(--navy); line-height: 1.1; }
+.nav__brand-text span { display: block; font-family: var(--font-body); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.12em; color: var(--gold-text); text-transform: uppercase; margin-top: 2px; }
+.nav__links { display: none; align-items: center; gap: 2.1rem; }
+.nav__links a { font-size: 0.88rem; font-weight: 500; color: var(--navy); position: relative; padding: 0.3rem 0; }
+.nav__links a::after { content:''; position:absolute; left:0; bottom:0; width:0; height:1.5px; background:var(--gold); transition:width 0.25s ease; }
+.nav__links a:hover::after { width: 100%; }
+.nav__cta { display: none; }
+.nav__toggle { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; align-items: center; }
+.nav__toggle span { width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease; }
+.nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav__mobile-menu {
+  position: fixed; inset: 0; top: 0;
+  background: var(--cream);
+  padding: 6rem 1.5rem 2rem;
+  display: flex; flex-direction: column; gap: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.3s ease;
+  z-index: 90;
+  visibility: hidden;
+}
+.nav__mobile-menu.is-open { transform: translateY(0); opacity: 1; visibility: visible; }
+.nav__mobile-menu a { font-family: var(--font-display); font-size: 1.7rem; font-weight: 600; color: var(--navy); padding: 0.85rem 0; border-bottom: 1px solid var(--gray-light); }
+.nav__mobile-menu .btn { margin-top: 2rem; align-self: flex-start; }
+
+@media (min-width: 900px) {
+  .nav__links { display: flex; }
+  .nav__cta { display: inline-flex; }
+  .nav__toggle { display: none; }
+  .nav__mobile-menu { display: none; }
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero { padding: 3.2rem 0 3rem; position: relative; overflow: hidden; }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -12%; right: -10%;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,162,91,0.14), transparent 70%);
+  pointer-events: none;
+}
+.hero__grid { display: grid; gap: 2.5rem; align-items: center; }
+.hero__content { position: relative; z-index: 2; }
+.hero h1 { margin-bottom: 1.1rem; }
+.hero__lede { font-size: clamp(1rem, 1.8vw, 1.15rem); color: var(--text-body); margin-bottom: 1.8rem; max-width: 34em; }
+.hero__ctas { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-bottom: 1.6rem; }
+.hero__price-note { font-size: 0.85rem; color: var(--gray); display: flex; align-items: center; gap: 0.5rem; }
+.hero__price-note strong { color: var(--navy); }
+
+.hero__visual { position: relative; min-height: 300px; z-index: 1; }
+.hero__collage { position: relative; width: 100%; height: 100%; }
+.hero__img {
+  position: absolute;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: var(--cream-2);
+  border: 6px solid var(--white);
+}
+.hero__img img { width: 100%; height: 100%; object-fit: contain; }
+.hero__img--main { width: 74%; aspect-ratio: 4/5; top: 0; left: 8%; z-index: 2; }
+.hero__img--side1 { width: 46%; aspect-ratio: 5/6; bottom: -6%; right: 0; z-index: 3; display: none; }
+.hero__img--side2 { width: 40%; aspect-ratio: 3/4; top: 6%; right: -2%; z-index: 1; display: none; }
+
+@media (min-width: 640px) {
+  .hero__img--side1 { display: block; }
+}
+@media (min-width: 1024px) {
+  .hero { padding: 4.5rem 0 5rem; }
+  .hero__grid { grid-template-columns: 1.05fr 0.95fr; gap: 3rem; }
+  .hero__visual { min-height: 440px; }
+  .hero__img--side2 { display: block; }
+  .hero__img--main { width: 62%; }
+  .hero__img--side1 { width: 40%; bottom: -8%; right: 2%; }
+  .hero__img--side2 { width: 34%; top: 2%; right: -6%; }
+}
+
+/* ============================================
+   THE PROBLEM
+   ============================================ */
+.problem { padding: var(--space-xl) 0; background: var(--cream-2); }
+.problem__inner { max-width: 620px; margin: 0 auto; text-align: center; }
+.problem__inner p { font-size: clamp(1rem, 2vw, 1.1rem); color: var(--text-body); margin-bottom: 0.7rem; }
+.problem__punch { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(1.3rem, 3vw, 1.6rem); color: var(--gold-text); margin-top: 1rem !important; }
+.problem__touchpoints { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-top: 2rem; }
+.problem__touchpoints span { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; color: var(--navy); background: var(--white); border: 1px solid var(--gray-light); padding: 0.55rem 1rem; border-radius: 100px; }
+.problem__touchpoints svg { width: 16px; height: 16px; color: var(--gold-text); }
+
+/* ============================================
+   SERVICES
+   ============================================ */
+.services { padding-top: var(--space-2xl); }
+.service-block { padding: var(--space-lg) 0; border-top: 1px solid var(--gray-light); }
+.service-block:first-of-type { border-top: none; padding-top: 0; }
+.service-block__head { display: grid; gap: 1rem; margin-bottom: 1.6rem; }
+.service-block__number { font-family: var(--font-display); font-size: 0.85rem; color: var(--gold-text); font-weight: 700; letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block; }
+.service-block__icon { width: 46px; height: 46px; border-radius: 50%; background: var(--navy); color: var(--gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+.service-block__icon svg { width: 22px; height: 22px; }
+.service-block__title { margin-bottom: 0.6rem; }
+.service-block__desc { color: var(--text-body); font-size: 1.05rem; font-weight: 500; max-width: 40em; margin-bottom: 1rem; }
+
+/* Slider component */
+.slider { position: relative; }
+.slider__viewport { overflow: hidden; }
+.slider__track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.3rem 0 1rem;
+  scrollbar-width: none;
+}
+.slider__track::-webkit-scrollbar { display: none; }
+.slider__slide {
+  flex: 0 0 auto;
+  width: 76%;
+  max-width: 320px;
+  scroll-snap-align: start;
+  background: var(--cream-2);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.slider__slide:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-3px); }
+.slider__slide-img { aspect-ratio: 4/5; background: var(--cream-2); display: flex; align-items: center; justify-content: center; }
+.slider__slide-img img { width: 100%; height: 100%; object-fit: contain; }
+.slider__caption { padding: 0.85rem 1.1rem 1rem; font-size: 0.82rem; font-weight: 600; color: var(--navy); }
+.slider__caption span { display: block; font-weight: 500; color: var(--gray); font-size: 0.74rem; margin-top: 2px; }
+
+.slider__controls { display: flex; align-items: center; justify-content: space-between; margin-top: 0.4rem; }
+.slider__dots { display: flex; gap: 0.4rem; }
+.slider__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gray-light); transition: background 0.25s ease, transform 0.25s ease; padding: 0; }
+.slider__dot.is-active { background: var(--gold); transform: scale(1.3); }
+.slider__arrows { display: none; gap: 0.5rem; }
+.slider__arrow { width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--gray-light); display: flex; align-items: center; justify-content: center; color: var(--navy); transition: background 0.25s ease, border-color 0.25s ease, opacity 0.25s ease; }
+.slider__arrow:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.slider__arrow:disabled { opacity: 0.3; pointer-events: none; }
+.slider__arrow svg { width: 16px; height: 16px; }
+@media (min-width: 700px) {
+  .slider__arrows { display: flex; }
+  .slider__slide { width: 42%; }
+}
+@media (min-width: 1024px) {
+  .slider__slide { width: 29%; }
+}
+
+/* Webpage feature (single showcase, not a slider) */
+.feature-panel {
+  background: var(--cream-2);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  justify-content: center;
+}
+.feature-panel__img { width: 100%; max-width: 420px; }
+.feature-panel__img img { width: 100%; height: auto; border-radius: var(--radius-sm); }
+@media (min-width: 700px) {
+  .feature-panel { padding: 2.5rem; }
+  .feature-panel__img { max-width: 460px; }
+}
+
+/* ============================================
+   HOW IT WORKS
+   ============================================ */
+.how { background: var(--cream-2); }
+.how__grid { display: grid; gap: 2.2rem; counter-reset: step; }
+.how__step { position: relative; padding-left: 3.6rem; }
+.how__step-num {
+  position: absolute; left: 0; top: 0;
+  width: 2.6rem; height: 2.6rem;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+}
+.how__step h3 { margin-bottom: 0.4rem; }
+.how__step p { font-size: 0.92rem; color: var(--text-body); }
+.how__closer { text-align: center; font-family: var(--font-display); text-transform: uppercase; font-size: 1.3rem; color: var(--gold-text); margin-top: 2.5rem; }
+@media (min-width: 900px) {
+  .how__grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .how__step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 1.3rem; left: calc(100% + 1rem - 1.5rem);
+    width: calc(2rem - 1rem);
+    border-top: 1.5px dashed var(--gray);
+    display: none;
+  }
+}
+
+/* ============================================
+   RESULTS (verified before/after numbers)
+   ============================================ */
+.results { background: var(--navy); color: var(--white); }
+.results .section-head.center h2 { color: var(--white); }
+.results .section-head.center p.lede { color: var(--text-body-on-navy); }
+.results__grid { display: grid; gap: 1.1rem; margin-top: 2.2rem; }
+.results__card { background: var(--navy-2); border-radius: var(--radius-md); padding: 1.9rem 1.3rem; text-align: center; border: 1px solid rgba(255,255,255,0.08); }
+.results__tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--gold-light); display: block; margin-bottom: 1.1rem; }
+.results__stat { display: flex; align-items: baseline; justify-content: center; gap: 0.6rem; margin-bottom: 0.7rem; flex-wrap: wrap; }
+.results__before { font-family: var(--font-display); font-size: clamp(1.3rem, 3.6vw, 1.6rem); color: rgba(196,204,214,0.5); text-decoration: line-through; text-decoration-thickness: 2px; }
+.results__arrow { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; }
+.results__after { font-family: var(--font-display); font-size: clamp(2rem, 5.5vw, 2.6rem); color: var(--gold); letter-spacing: 0.01em; }
+.results__sub { font-size: 0.82rem; color: var(--text-body-on-navy); }
+.results__note { text-align: center; font-size: 0.76rem; color: rgba(196,204,214,0.55); margin-top: 2rem; }
+@media (min-width: 800px) { .results__grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq__list { max-width: 720px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--gray-light); padding: 1.15rem 0; }
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--navy);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--gold-text);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { padding-top: 0.85rem; color: var(--text-body); font-size: 0.92rem; max-width: 60ch; }
+
+/* ============================================
+   PRICE + TRUST
+   ============================================ */
+.price-trust__inner { text-align: center; max-width: 640px; margin: 0 auto; }
+.price-trust__badge {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--gold);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 2.4rem;
+  margin: 1.6rem 0 2rem;
+}
+.price-trust__badge-label { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.4rem; }
+.price-trust__badge-price { font-family: var(--font-display); font-size: clamp(2rem, 6vw, 2.8rem); text-transform: uppercase; }
+.price-trust__list { display: grid; gap: 0.9rem; max-width: 380px; margin: 0 auto; text-align: left; }
+.price-trust__list li { display: flex; align-items: center; gap: 0.7rem; font-weight: 600; color: var(--navy); font-size: 0.98rem; }
+.price-trust__list svg { width: 20px; height: 20px; color: var(--gold-text); flex-shrink: 0; }
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.final-cta {
+  background: var(--navy);
+  position: relative;
+  color: var(--white);
+  overflow: hidden;
+  border-top: 3px solid var(--gold);
+}
+.final-cta::before {
+  content: '';
+  position: absolute; bottom: -30%; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 700px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,162,91,0.12), transparent 65%);
+  pointer-events: none;
+}
+.final-cta__inner { position: relative; z-index: 1; text-align: center; max-width: 640px; margin: 0 auto; }
+.final-cta h2 { color: var(--white); margin-bottom: 0.9rem; }
+.final-cta p.lede { color: var(--text-body-on-navy); margin: 0 auto 1.8rem; }
+.final-cta__ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.9rem; margin-bottom: 1.3rem; }
+.final-cta__micro { font-size: 0.85rem; color: var(--gold-light); }
+
+/* ============================================
+   AUDIT FORM
+   ============================================ */
+.audit-form-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem 1.4rem;
+  max-width: 480px;
+  margin: 2rem auto 0;
+  text-align: left;
+  box-shadow: 0 24px 50px -18px rgba(0,0,0,0.4);
+}
+.audit-form__row { margin-bottom: 1.1rem; }
+.audit-form__row label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+.audit-form__row label span { font-weight: 500; color: var(--gray); }
+.audit-form__row input, .audit-form__row textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid var(--gray-light);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--navy);
+  transition: border-color 0.2s ease;
+}
+.audit-form__row input:focus, .audit-form__row textarea:focus { outline: none; border-color: var(--gold); }
+.audit-form__row textarea { resize: vertical; min-height: 80px; }
+.audit-form__submit { width: 100%; margin-top: 0.4rem; }
+.audit-form__note { text-align: center; font-size: 0.82rem; color: var(--gray); margin-top: 1rem; }
+.hp-field { position: absolute; left: -9999px; top: -9999px; }
+.audit-form__success { text-align: center; padding: 2rem 1rem; }
+.audit-form__success h3 { color: var(--navy); margin-bottom: 0.6rem; }
+.audit-form__success p { color: var(--text-body); }
+.final-cta__alt { margin-top: 1.8rem; }
+.final-cta__alt p { font-size: 0.85rem; color: var(--text-body-on-navy); margin-bottom: 0.8rem; }
+.final-cta__alt-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer { background: var(--navy-3); color: var(--text-body-on-navy); padding: var(--space-xl) 0 var(--space-md); }
+.footer__grid { display: grid; gap: 2.2rem; margin-bottom: 2.5rem; }
+.footer__brand { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: 0.01em; text-transform: uppercase; color: var(--white); margin-bottom: 0.5rem; }
+.footer__tagline { font-size: 0.85rem; color: var(--gold-light); font-style: italic; margin-bottom: 1rem; }
+.footer__desc { font-size: 0.85rem; max-width: 30em; }
+.footer__col h4 { font-family: var(--font-body); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 1rem; font-weight: 700; }
+.footer__col ul { display: flex; flex-direction: column; gap: 0.7rem; }
+.footer__col a { font-size: 0.88rem; transition: color 0.2s ease; }
+.footer__col a:hover { color: var(--gold-light); }
+.footer__bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: space-between; font-size: 0.78rem; color: rgba(196,204,214,0.7); }
+@media (min-width: 800px) {
+  .footer__grid { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+
+/* ============================================
+   FLOATING WHATSAPP BUTTON (desktop only — mobile uses the sticky bar below)
+   ============================================ */
+.whatsapp-float {
+  display: none;
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #25D366;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 26px -6px rgba(13,27,42,0.45);
+  z-index: 80;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 12px 30px -6px rgba(13,27,42,0.55); }
+.whatsapp-float svg { width: 26px; height: 26px; }
+@media (min-width: 900px) { .whatsapp-float { display: flex; bottom: 26px; right: 26px; width: 58px; height: 58px; } }
+
+/* ============================================
+   STICKY MOBILE CTA BAR
+   ============================================ */
+.mobile-cta-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 85;
+  display: flex;
+  gap: 0.6rem;
+  background: var(--white);
+  padding: 0.6rem 0.7rem;
+  padding-bottom: calc(0.6rem + env(safe-area-inset-bottom));
+  box-shadow: 0 -8px 24px -10px rgba(13,27,42,0.3);
+  border-top: 1px solid var(--gray-light);
+}
+.mobile-cta-bar__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.8rem 0.6rem;
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.mobile-cta-bar__btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+.mobile-cta-bar__btn--primary { background: var(--gold); color: var(--navy); }
+.mobile-cta-bar__btn--whatsapp { background: #25D366; color: var(--white); }
+.mobile-cta-bar__btn:active { transform: scale(0.97); }
+body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+@media (min-width: 900px) {
+  .mobile-cta-bar { display: none; }
+  body { padding-bottom: 0; }
+}
+
+/* ============================================
+   MISC
+   ============================================ */
+.section-curve-wrap { line-height: 0; margin-bottom: -2px; }
+.section-curve { width: 100%; height: 40px; display: block; }
+@media (min-width: 700px) { .section-curve { height: 64px; } }
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     NAV
+     ============================================ -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__brand">
+      <img src="images/logo.png" alt="YBM logo" width="400" height="400">
+      <span class="nav__brand-text">YBM<span>Your Business Makeover</span></span>
+    </a>
+    <div class="nav__links">
+      <a href="#results">Results</a>
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#audit" class="btn btn-primary btn-sm nav__cta">Free Audit</a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile-menu" id="navMobileMenu">
+    <a href="#results">Results</a>
+    <a href="#services">Services</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#faq">FAQ</a>
+    <a href="#audit" class="btn btn-primary">Get My Free Audit →</a>
+  </div>
+</nav>
+
+<div id="top"></div>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<header class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__content">
+      <span class="eyebrow">Your Business Makeover</span>
+      <h1>Your Business Might Be Great. <span class="accent">But Does It Look Great Online?</span></h1>
+      <p class="hero__lede">We make your Google profile, Instagram, website, branding or Airbnb listing look professional — so customers feel confident choosing you.</p>
+      <div class="hero__ctas">
+        <a href="#audit" class="btn btn-primary">Get My Free Audit →</a>
+        <a href="#results" class="btn btn-outline">See Real Results</a>
+      </div>
+      <p class="hero__price-note">No commitment. No pressure. Just 3 things we'd improve.</p>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__collage">
+        <div class="hero__img hero__img--main"><img src="images/hero-livorno.jpg" alt="Livorno restaurant brand identity — logo, menu and packaging designed by YBM" width="1200" height="1483"></div>
+        <div class="hero__img hero__img--side1"><img src="images/hero-avo.jpg" alt="The Avo Company storefront signage, an example of YBM branding work" width="1000" height="1206"></div>
+        <div class="hero__img hero__img--side2"><img src="images/hero-rosma.jpg" alt="Rosma florist brand identity designed by YBM" width="1000" height="1362"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================
+     THE PROBLEM
+     ============================================ -->
+<section class="problem">
+  <div class="wrap">
+    <div class="problem__inner reveal">
+      <span class="eyebrow" style="justify-content:center;">The Reality</span>
+      <h2>Customers Look You Up Before They Choose You.</h2>
+      <p>They see your Google profile, website, Instagram, photos and reviews.</p>
+      <p>If your online presence looks outdated, confusing or unprofessional, you may be losing customers before they ever call.</p>
+      <p class="problem__punch">That's what we fix.</p>
+      <div class="problem__touchpoints">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Google Profile</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/></svg>Website</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Instagram</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.3l-6.2 3.3 1.2-6.9L2 8.9l7-1L12 1.5l3 6.4 7 1-5 4.8 1.2 6.9z"/></svg>Reviews</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     RESULTS
+     ============================================ -->
+<section class="results" id="results">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow eyebrow--on-navy" style="justify-content:center;">Real Results</span>
+      <h2>See What A Makeover Can <span class="accent--on-navy">Do</span></h2>
+      <p class="lede" style="margin:0 auto;">What a makeover actually looks like — pulled straight from our own portfolio.</p>
+    </div>
+    <div class="results__grid reveal">
+      <div class="results__card">
+        <span class="results__tag">Google Business Profile</span>
+        <div class="results__stat">
+          <span class="results__before">2.3★</span>
+          <svg class="results__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <span class="results__after" data-count-target="4.8" data-count-decimals="1" data-count-suffix="★">4.8★</span>
+        </div>
+        <span class="results__sub">12 reviews → 256+ reviews</span>
+      </div>
+      <div class="results__card">
+        <span class="results__tag">Instagram Profile</span>
+        <div class="results__stat">
+          <span class="results__before">381</span>
+          <svg class="results__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <span class="results__after" data-count-target="4875" data-count-comma="1">4,875</span>
+        </div>
+        <span class="results__sub">followers, same account</span>
+      </div>
+      <div class="results__card">
+        <span class="results__tag">Airbnb Listing</span>
+        <div class="results__stat">
+          <span class="results__before">$48</span>
+          <svg class="results__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <span class="results__after" data-count-target="92" data-count-prefix="$">$92</span>
+        </div>
+        <span class="results__sub">per night, Superhost status</span>
+      </div>
+    </div>
+    <p class="results__note reveal">*Example transformation from our portfolio. Individual results vary by business.</p>
+    <div class="reveal" style="text-align:center; margin-top:1.8rem;">
+      <a href="#audit" class="btn btn-primary">See What We'd Improve For You →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SERVICES
+     ============================================ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Services</span>
+      <h2>What Does Your Business <span class="accent">Need</span>?</h2>
+      <p class="lede">Pick one, or a few. Everything is done for you.</p>
+    </div>
+
+    <!-- 01 Google Business Makeover -->
+    <div class="service-block reveal">
+      <div class="service-block__head">
+        <div>
+          <span class="service-block__number">01 / 05</span>
+          <div class="service-block__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="service-block__title">Google Business Makeover</h3>
+          <p class="service-block__desc">Look better when customers search for you.</p>
+        </div>
+      </div>
+      <div class="slider" data-slider>
+        <div class="slider__viewport">
+          <div class="slider__track">
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/gmb-fitnessgym.jpg" loading="lazy" decoding="async" alt="City Fitness Gym Google Business Profile, before and after makeover" width="944" height="1666"></div>
+              <div class="slider__caption">City Fitness Gym<span>Google Business Profile</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/gmb-greenleaf.jpg" loading="lazy" decoding="async" alt="Green Leaf Cafe Google Business Profile, before and after makeover" width="944" height="1666"></div>
+              <div class="slider__caption">Green Leaf Cafe<span>Google Business Profile</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/gmb-mariaspizzeria.jpg" loading="lazy" decoding="async" alt="Maria's Pizzeria Google Business Profile, before and after makeover" width="944" height="1666"></div>
+              <div class="slider__caption">Maria's Pizzeria<span>Google Business Profile</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/gmb-coldspring.jpg" loading="lazy" decoding="async" alt="Cold Spring Bakery Google Business Profile, before and after makeover" width="1100" height="1936"></div>
+              <div class="slider__caption">Cold Spring Bakery<span>Google Business Profile</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slider__controls">
+          <div class="slider__dots"></div>
+          <div class="slider__arrows">
+            <button class="slider__arrow slider__arrow--prev" aria-label="Previous images"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button class="slider__arrow slider__arrow--next" aria-label="Next images"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 Instagram Makeover -->
+    <div class="service-block reveal">
+      <div class="service-block__head">
+        <div>
+          <span class="service-block__number">02 / 05</span>
+          <div class="service-block__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <h3 class="service-block__title">Instagram Makeover</h3>
+          <p class="service-block__desc">Make your profile look professional and trustworthy.</p>
+        </div>
+      </div>
+      <div class="slider" data-slider>
+        <div class="slider__viewport">
+          <div class="slider__track">
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/ig-bloomboutique.jpg" loading="lazy" decoding="async" alt="Bloom Boutique Instagram profile, before and after makeover" width="1024" height="1536"></div>
+              <div class="slider__caption">Bloom Boutique<span>Instagram profile</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/ig-sweetcountry.jpg" loading="lazy" decoding="async" alt="Sweet Country Bakery Instagram profile, before and after makeover" width="1024" height="1536"></div>
+              <div class="slider__caption">Sweet Country Bakery<span>Instagram profile</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/ig-glamoursalon.jpg" loading="lazy" decoding="async" alt="Glamour salon Instagram profile, before and after makeover" width="1024" height="1536"></div>
+              <div class="slider__caption">Glamour Salon<span>Instagram profile</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slider__controls">
+          <div class="slider__dots"></div>
+          <div class="slider__arrows">
+            <button class="slider__arrow slider__arrow--prev" aria-label="Previous images"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button class="slider__arrow slider__arrow--next" aria-label="Next images"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Website Makeover -->
+    <div class="service-block reveal">
+      <div class="service-block__head">
+        <div>
+          <span class="service-block__number">03 / 05</span>
+          <div class="service-block__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="5.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/><circle cx="7.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <h3 class="service-block__title">Website Makeover</h3>
+          <p class="service-block__desc">Turn an outdated website into a clean, modern one.</p>
+        </div>
+      </div>
+      <div class="feature-panel">
+        <div class="feature-panel__img"><img src="images/webpage-urbanbrew.jpg" loading="lazy" decoding="async" alt="Urban Brew Coffee House webpage design on laptop and phone" width="941" height="1672"></div>
+      </div>
+    </div>
+
+    <!-- 04 Branding Makeover -->
+    <div class="service-block reveal">
+      <div class="service-block__head">
+        <div>
+          <span class="service-block__number">04 / 05</span>
+          <div class="service-block__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <h3 class="service-block__title">Branding Makeover</h3>
+          <p class="service-block__desc">Give your business a polished, consistent look.</p>
+        </div>
+      </div>
+      <div class="slider" data-slider>
+        <div class="slider__viewport">
+          <div class="slider__track">
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/brand-livorno.jpg" loading="lazy" decoding="async" alt="Livorno Italian Ristorante — full brand identity: logo, menu and packaging" width="1100" height="1360"></div>
+              <div class="slider__caption">Livorno Italian Ristorante<span>Full brand identity</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/brand-rosma.jpg" loading="lazy" decoding="async" alt="Rosma florist brand identity with logo and packaging" width="1100" height="1499"></div>
+              <div class="slider__caption">Rosma<span>Logo &amp; packaging</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/brand-avo.jpg" loading="lazy" decoding="async" alt="The Avo Company storefront signage" width="1100" height="1327"></div>
+              <div class="slider__caption">The Avo Company<span>Signage &amp; identity</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/brand-cuma.jpg" loading="lazy" decoding="async" alt="CUMA coffee brand identity and packaging" width="1100" height="1451"></div>
+              <div class="slider__caption">CUMA Coffee<span>Brand identity</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/brand-marwa.jpg" loading="lazy" decoding="async" alt="Marwa beauty brand identity and packaging" width="1100" height="1408"></div>
+              <div class="slider__caption">Marwa Beauty<span>Brand identity</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/brand-turtle.jpg" loading="lazy" decoding="async" alt="Turtle Coffee logo redesign, before and after" width="1100" height="1170"></div>
+              <div class="slider__caption">Turtle Coffee<span>Logo redesign</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/brand-nightwolf.jpg" loading="lazy" decoding="async" alt="Night Wolf logo redesign, before and after" width="1100" height="1294"></div>
+              <div class="slider__caption">Night Wolf<span>Logo redesign</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/brand-maria.jpg" loading="lazy" decoding="async" alt="Maria beauty brand identity and packaging" width="1100" height="1345"></div>
+              <div class="slider__caption">Maria Beauty<span>Brand identity</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/brand-enakin.jpg" loading="lazy" decoding="async" alt="Enakin bakery brand identity and packaging" width="1100" height="1346"></div>
+              <div class="slider__caption">Enakin<span>Brand identity</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/brand-logogrid.jpg" loading="lazy" decoding="async" alt="A wall of logo marks designed by YBM" width="1100" height="1351"></div>
+              <div class="slider__caption">The Logo Wall<span>A few favourites</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slider__controls">
+          <div class="slider__dots"></div>
+          <div class="slider__arrows">
+            <button class="slider__arrow slider__arrow--prev" aria-label="Previous images"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button class="slider__arrow slider__arrow--next" aria-label="Next images"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 Airbnb Makeover -->
+    <div class="service-block reveal">
+      <div class="service-block__head">
+        <div>
+          <span class="service-block__number">05 / 05</span>
+          <div class="service-block__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
+          </div>
+          <h3 class="service-block__title">Airbnb Makeover</h3>
+          <p class="service-block__desc">Make your listing more attractive to potential guests.</p>
+        </div>
+      </div>
+      <div class="slider" data-slider>
+        <div class="slider__viewport">
+          <div class="slider__track">
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/airbnb-nashville.jpg" loading="lazy" decoding="async" alt="Nashville Airbnb listing, before and after makeover" width="916" height="1717"></div>
+              <div class="slider__caption">Nashville 1BR<span>Airbnb listing</span></div>
+            </div>
+            <div class="slider__slide">
+              <div class="slider__slide-img"><img src="images/airbnb-austin.jpg" loading="lazy" decoding="async" alt="Austin Airbnb listing, before and after makeover" width="1024" height="1536"></div>
+              <div class="slider__caption">Austin 1BR<span>Airbnb listing</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slider__controls">
+          <div class="slider__dots"></div>
+          <div class="slider__arrows">
+            <button class="slider__arrow slider__arrow--prev" aria-label="Previous images"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button class="slider__arrow slider__arrow--next" aria-label="Next images"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     HOW IT WORKS
+     ============================================ -->
+<section class="how" id="how-it-works">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow" style="justify-content:center;">The Process</span>
+      <h2>Simple. We Do The Work.</h2>
+    </div>
+    <div class="how__grid reveal">
+      <div class="how__step">
+        <div class="how__step-num">01</div>
+        <h3>Tell Us About Your Business</h3>
+        <p>Send us your website, Google profile, Instagram or simply tell us what you'd like improved.</p>
+      </div>
+      <div class="how__step">
+        <div class="how__step-num">02</div>
+        <h3>We Create Your Makeover</h3>
+        <p>We look at what needs improving and do the work for you.</p>
+      </div>
+      <div class="how__step">
+        <div class="how__step-num">03</div>
+        <h3>You Review &amp; Approve</h3>
+        <p>You review the finished makeover. Nothing goes live until you're happy.</p>
+      </div>
+    </div>
+    <p class="how__closer reveal">That's it.</p>
+  </div>
+</section>
+
+<!-- ============================================
+     PRICE + TRUST
+     ============================================ -->
+<section class="price-trust" id="pricing">
+  <div class="wrap price-trust__inner reveal">
+    <span class="eyebrow" style="justify-content:center;">Pricing</span>
+    <h2>Professional Makeovers. Without The Agency Price Tag.</h2>
+    <div class="price-trust__badge">
+      <span class="price-trust__badge-label">Projects Starting At</span>
+      <span class="price-trust__badge-price">$100</span>
+    </div>
+    <ul class="price-trust__list">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No monthly contract</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No complicated packages</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No unnecessary services</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Only pay for what your business needs</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================
+     FAQ
+     ============================================ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow" style="justify-content:center;">Questions</span>
+      <h2>Before You Reach Out</h2>
+    </div>
+    <div class="faq__list reveal">
+      <details class="faq-item">
+        <summary>How much does it actually cost?</summary>
+        <p>Pricing starts from just $100 and depends on which service — or combination of services — you choose. Message us on WhatsApp and we'll give you a straightforward quote. No pressure, no obligation.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What exactly is included?</summary>
+        <p>Pick exactly what you need — branding, Google Business Profile, Instagram, Airbnb listings, or a full webpage. Most businesses start with one or two and add more later. Nothing is bundled unless you want it to be.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need to do anything on my end?</summary>
+        <p>Just share access to your current profiles and a few details about your business. We handle the research, the design and the writing — you approve the result before anything goes live.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my business too small for this?</summary>
+        <p>Not at all — YBM was built specifically for small businesses and Airbnb hosts. Whether you opened last month or have been running for years, the process works the same way.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="section-curve-wrap" aria-hidden="true">
+  <svg class="section-curve" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,10 Q720,58 1440,10 L1440,60 L0,60 Z" fill="#0D1B2A"/>
+    <path d="M0,10 Q720,58 1440,10" fill="none" stroke="#C8A25B" stroke-width="2.5"/>
+  </svg>
+</div>
+
+<!-- ============================================
+     FINAL CTA
+     ============================================ -->
+<section class="final-cta" id="audit">
+  <div class="wrap final-cta__inner reveal">
+    <span class="eyebrow eyebrow--on-navy" style="justify-content:center;">Free Audit</span>
+    <h2>Let's Make Your Business Look As Good As It Really Is.</h2>
+    <p class="lede">Tell us what you'd like to improve and we'll show you where your online presence could be stronger.</p>
+
+    <div class="audit-form-card">
+      <form name="audit-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="auditForm">
+        <input type="hidden" name="form-name" value="audit-request">
+        <p class="hp-field"><label>Leave this blank: <input name="bot-field"></label></p>
+
+        <div class="audit-form__row">
+          <label for="af-name">Name</label>
+          <input type="text" id="af-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="audit-form__row">
+          <label for="af-business">Business Name</label>
+          <input type="text" id="af-business" name="business" autocomplete="organization" required>
+        </div>
+        <div class="audit-form__row">
+          <label for="af-url">Website, Google, or Instagram link <span>(optional)</span></label>
+          <input type="text" id="af-url" name="url" placeholder="e.g. instagram.com/yourbusiness" autocomplete="url">
+        </div>
+        <div class="audit-form__row">
+          <label for="af-contact">Email or WhatsApp Number</label>
+          <input type="text" id="af-contact" name="contact" required>
+        </div>
+        <div class="audit-form__row">
+          <label for="af-notes">What would you like us to improve? <span>(optional)</span></label>
+          <textarea id="af-notes" name="notes" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary audit-form__submit">Get My Free Audit →</button>
+        <p class="audit-form__note">We'll identify 3 things that could be hurting your online presence.</p>
+      </form>
+      <div class="audit-form__success" id="auditSuccess" hidden>
+        <h3>Got it — thank you!</h3>
+        <p>We'll take a look and get back to you soon. Prefer to talk now? Message us on WhatsApp below.</p>
+      </div>
+    </div>
+
+    <p class="final-cta__micro" style="margin-top:1.2rem;">Free • No commitment • No pressure</p>
+
+    <div class="final-cta__alt">
+      <p>Prefer to just send a message?</p>
+      <div class="final-cta__alt-ctas">
+        <a href="#" class="btn btn-outline btn-outline--on-navy" data-cta="whatsapp">WhatsApp Us</a>
+        <a href="#" class="btn btn-outline btn-outline--on-navy" data-cta="email">Email Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">YBM — Your Business Makeover</div>
+        <div class="footer__tagline">Your business. Our makeover.</div>
+        <p class="footer__desc">We help small businesses &amp; Airbnb hosts make a stronger first impression online — branding, Google, Instagram, Airbnb and web, done for you.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="#" data-cta="whatsapp">WhatsApp Us</a></li>
+          <li><a href="#" data-cta="instagram">Instagram</a></li>
+          <li><a href="#" data-cta="email">Email Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 YBM — Your Business Makeover. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="whatsapp-float" data-cta="whatsapp" target="_blank" rel="noopener" aria-label="Chat with YBM on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+</a>
+
+<div class="mobile-cta-bar">
+  <a href="#audit" class="mobile-cta-bar__btn mobile-cta-bar__btn--primary">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    Get Free Audit
+  </a>
+  <a href="#" class="mobile-cta-bar__btn mobile-cta-bar__btn--whatsapp" data-cta="whatsapp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- CONTACT CONFIG ----------
+     Edit these three lines to wire up every CTA button on the page at once. */
+  var WHATSAPP_NUMBER = '919319612345';
+  var WHATSAPP_MESSAGE = "Hi YBM! I'd like a free audit of my business's online presence.";
+  var INSTAGRAM_HANDLE = 'your_business_makeover';
+  var EMAIL_ADDRESS = 'yourbusinessmakeover@gmail.com';
+
+  function wireContacts() {
+    var waLink = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(WHATSAPP_MESSAGE);
+    var igLink = 'https://instagram.com/' + INSTAGRAM_HANDLE;
+    var mailLink = 'mailto:' + EMAIL_ADDRESS;
+    document.querySelectorAll('[data-cta="whatsapp"]').forEach(function (el) { el.href = waLink; el.target = '_blank'; el.rel = 'noopener'; });
+    document.querySelectorAll('[data-cta="instagram"]').forEach(function (el) { el.href = igLink; el.target = '_blank'; el.rel = 'noopener'; });
+    document.querySelectorAll('[data-cta="email"]').forEach(function (el) { el.href = mailLink; });
+  }
+
+  /* ---------- NAV SHADOW ON SCROLL ---------- */
+  function initNavShadow() {
+    var nav = document.getElementById('nav');
+    function onScroll() { nav.classList.toggle('is-scrolled', window.scrollY > 8); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ---------- MOBILE NAV ---------- */
+  function initMobileNav() {
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('navMobileMenu');
+    toggle.addEventListener('click', function () {
+      var isOpen = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  /* ---------- SLIDERS ---------- */
+  function initSliders() {
+    document.querySelectorAll('[data-slider]').forEach(function (slider) {
+      var track = slider.querySelector('.slider__track');
+      var slides = Array.prototype.slice.call(track.children);
+      var prevBtn = slider.querySelector('.slider__arrow--prev');
+      var nextBtn = slider.querySelector('.slider__arrow--next');
+      var dotsWrap = slider.querySelector('.slider__dots');
+
+      slides.forEach(function (slide, i) {
+        var dot = document.createElement('button');
+        dot.className = 'slider__dot';
+        dot.setAttribute('aria-label', 'Go to image ' + (i + 1) + ' of ' + slides.length);
+        dot.addEventListener('click', function () {
+          track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        });
+        dotsWrap.appendChild(dot);
+      });
+      var dots = Array.prototype.slice.call(dotsWrap.children);
+
+      function updateActive() {
+        var trackLeft = track.scrollLeft;
+        var closestIdx = 0, closestDist = Infinity;
+        slides.forEach(function (slide, i) {
+          var dist = Math.abs(slide.offsetLeft - track.offsetLeft - trackLeft);
+          if (dist < closestDist) { closestDist = dist; closestIdx = i; }
+        });
+        dots.forEach(function (d, i) { d.classList.toggle('is-active', i === closestIdx); });
+        if (prevBtn) prevBtn.disabled = closestIdx === 0;
+        if (nextBtn) nextBtn.disabled = closestIdx === slides.length - 1;
+      }
+
+      var scrollTimeout;
+      track.addEventListener('scroll', function () {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateActive, 90);
+      }, { passive: true });
+
+      if (prevBtn) prevBtn.addEventListener('click', function () {
+        track.scrollBy({ left: -track.clientWidth * 0.86, behavior: 'smooth' });
+      });
+      if (nextBtn) nextBtn.addEventListener('click', function () {
+        track.scrollBy({ left: track.clientWidth * 0.86, behavior: 'smooth' });
+      });
+
+      updateActive();
+      window.addEventListener('resize', updateActive);
+    });
+  }
+
+  /* ---------- SLIDER AUTOPLAY ---------- */
+  function initSliderAutoplay() {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return; // people who asked for less motion shouldn't get an auto-moving carousel
+
+    document.querySelectorAll('[data-slider]').forEach(function (slider) {
+      var track = slider.querySelector('.slider__track');
+      var slides = Array.prototype.slice.call(track.children);
+      if (slides.length < 2) return;
+
+      var INTERVAL = 4000;
+      var RESUME_DELAY = 5000;
+      var timer = null;
+      var resumeTimer = null;
+
+      function currentIndex() {
+        var trackLeft = track.scrollLeft;
+        var closestIdx = 0, closestDist = Infinity;
+        slides.forEach(function (slide, i) {
+          var dist = Math.abs(slide.offsetLeft - track.offsetLeft - trackLeft);
+          if (dist < closestDist) { closestDist = dist; closestIdx = i; }
+        });
+        return closestIdx;
+      }
+
+      function advance() {
+        var next = (currentIndex() + 1) % slides.length;
+        track.scrollTo({ left: slides[next].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      }
+
+      function start() {
+        stop();
+        timer = setInterval(advance, INTERVAL);
+      }
+      function stop() {
+        if (timer) { clearInterval(timer); timer = null; }
+      }
+      function pauseThenResume() {
+        stop();
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(start, RESUME_DELAY);
+      }
+
+      slider.addEventListener('mouseenter', stop);
+      slider.addEventListener('mouseleave', start);
+      track.addEventListener('touchstart', pauseThenResume, { passive: true });
+      slider.querySelectorAll('.slider__arrow, .slider__dot').forEach(function (btn) {
+        btn.addEventListener('click', pauseThenResume);
+      });
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) stop(); else start();
+      });
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) { entry.isIntersecting ? start() : stop(); });
+        }, { threshold: 0.4 }).observe(slider);
+      } else {
+        start();
+      }
+    });
+  }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  function initReveal() {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- RESULTS COUNT-UP ---------- */
+  function initCounters() {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('[data-count-target]');
+    if (!els.length) return;
+
+    function render(el, value) {
+      var prefix = el.getAttribute('data-count-prefix') || '';
+      var suffix = el.getAttribute('data-count-suffix') || '';
+      var decimals = parseInt(el.getAttribute('data-count-decimals') || '0', 10);
+      var useComma = el.getAttribute('data-count-comma') === '1';
+      var num = decimals ? value.toFixed(decimals) : Math.round(value).toString();
+      if (useComma) num = Math.round(value).toLocaleString('en-US');
+      el.textContent = prefix + num + suffix;
+    }
+
+    function animate(el) {
+      var target = parseFloat(el.getAttribute('data-count-target'));
+      if (reduceMotion || !('IntersectionObserver' in window)) { render(el, target); return; }
+      var duration = 1300;
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        render(el, target * eased);
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { render(el, parseFloat(el.getAttribute('data-count-target'))); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { animate(entry.target); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.4 });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- AUDIT FORM ---------- */
+  function initAuditForm() {
+    var form = document.getElementById('auditForm');
+    if (!form) return;
+    var success = document.getElementById('auditSuccess');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var submitBtn = form.querySelector('.audit-form__submit');
+      var originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+
+      var data = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      }).then(function () {
+        form.hidden = true;
+        success.hidden = false;
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }).catch(function () {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        alert("That didn't go through — please message us on WhatsApp instead, we'd love to help.");
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    wireContacts();
+    initNavShadow();
+    initMobileNav();
+    initSliders();
+    initSliderAutoplay();
+    initReveal();
+    initCounters();
+    initAuditForm();
+  });
+})();
+</script>
+
+</body>
+</html>
